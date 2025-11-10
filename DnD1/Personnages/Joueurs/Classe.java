@@ -1,4 +1,4 @@
-package Personnages.Joueurs;
+package DnD1.Personnages.Joueurs;
 
 public enum Classe
 {
