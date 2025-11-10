@@ -1,4 +1,4 @@
-package DnD1.Personnages.Joueurs;
+package DnD1.Personnages.Players;
 
 public enum Race
 {
