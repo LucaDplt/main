@@ -134,8 +134,9 @@ public abstract class Entity
     }
 
     //Constructor
-     public Entity(int maxLife, int life, int level, Classe classe, Race race, Historic historic)
+     public Entity(String name, int maxLife, int life, int level, Classe classe, Race race, Historic historic)
     {
+        this.name = name;
         this.maxLife = maxLife;
         this.life = life;
         this.level = level;

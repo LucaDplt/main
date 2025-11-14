@@ -18,6 +18,7 @@ public class Race
     public Race(String description, Size size, int bonusStrength, int bonusDexterity, int bonusConstitution, int bonusIntelligence, int bonusWisdom, int bonusCharisma)
     {
         this.description = description;
+        this.size = size;
         this.bonusStrength = bonusStrength;
         this.bonusDexterity = bonusDexterity;
         this.bonusConstitution = bonusConstitution;
@@ -71,67 +72,19 @@ public class Race
     @Override
     public String toString()
     {
-        String strengthToString = "";
-        String dexterityToString = "";
-        String constitutionToString = "";
-        String intelligenceToString = "";
-        String wisdomToString = "";
-        String charismaToString = "";
+        return this.getClass().getSimpleName() + "(" + this.getSize() + ") :\n - STR : " + this.bonusStrength + "\n - DEX : " + this.bonusDexterity + "\n - CON : " + this.bonusConstitution + "\n - INT : " + this.bonusIntelligence + "\n - WIS : " + this.bonusWisdom + "\n - CHA : " + this.bonusCharisma;
+    }
 
-        if(this.getBonusStrength() < 0)
-        {
-            strengthToString = String.format("%-1i",this.getBonusStrength());
-        }
-        if(this.getBonusStrength() >= 0)
-        {
-            strengthToString = "+" + this.getBonusStrength();
-        }
-
-        if(this.getBonusDexterity() < 0)
-        {
-            strengthToString = String.format("%-1i",this.getBonusDexterity());
-        }
-        if(this.getBonusDexterity() >= 0)
-        {
-            strengthToString = "+" + this.getBonusDexterity();
-        }
-
-        if(this.getBonusConstitution() < 0)
-        {
-            strengthToString = String.format("%-1i",this.getBonusConstitution());
-        }
-        if(this.getBonusConstitution() >= 0)
-        {
-            strengthToString = "+" + this.getBonusConstitution();
-        }
-
-        if(this.getBonusIntelligence() < 0)
-        {
-            strengthToString = String.format("%-1i",this.getBonusIntelligence());
-        }
-        if(this.getBonusIntelligence() >= 0)
-        {
-            strengthToString = "+" + this.getBonusIntelligence();
-        }
-
-        if(this.getBonusWisdom() < 0)
-        {
-            strengthToString = String.format("%-1i",this.getBonusWisdom());
-        }
-        if(this.getBonusWisdom() >= 0)
-        {
-            strengthToString = "+" + this.getBonusWisdom();
-        }
-
-        if(this.getBonusCharisma() < 0)
-        {
-            strengthToString = String.format("%-1i",this.getBonusCharisma());
-        }
-        if(this.getBonusCharisma() >= 0)
-        {
-            strengthToString = "+" + this.getBonusCharisma();
-        }
-
-        return this.getClass().getSimpleName() + "(" + this.getSize() + ") :\n - STR : " + strengthToString + "\n - DEX : " + dexterityToString + "\n - CON : " + constitutionToString + "\n - INT : " + intelligenceToString + "\n - WIS : " + wisdomToString + "\n - CHA : " + charismaToString;
+    //Main
+    public static void main(String[] args)
+    {
+        Dwarf dwarf = new Dwarf();
+        Elf elf = new Elf();
+        Halfling halfling = new Halfling();
+        Human human = new Human();
+        System.out.println(dwarf);
+        System.out.println(elf);
+        System.out.println(halfling);
+        System.out.println(human);
     }
 }
