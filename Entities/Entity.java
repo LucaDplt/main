@@ -1,6 +1,8 @@
 package DnD1.Entities;
 
 import DnD1.Entities.Players.*;
+import DnD1.Classes.*;
+import DnD1.Races.*;
 
 public abstract class Entity
 {
@@ -18,6 +20,7 @@ public abstract class Entity
     private int intelligence = 0;
     private int wisdom = 0;
     private int charisma = 0;
+    private Size size;
     
     //Getters setters
     public String getName()
@@ -125,6 +128,11 @@ public abstract class Entity
         this.charisma = charisma;
     }
 
+    public Size getSize()
+    {
+        return this.size;
+    }
+
     //Constructor
      public Entity(int maxLife, int life, int level, Classe classe, Race race, Historic historic)
     {
@@ -134,6 +142,7 @@ public abstract class Entity
         this.classe = classe;
         this.race = race;
         this.historic = historic;
+        this.size = race.getSize();
     }
 
     //ToString

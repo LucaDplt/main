@@ -3,6 +3,8 @@ package DnD1.Entities.Players;
 import java.io.Console;
 
 import DnD1.Entities.Entity;
+import DnD1.Classes.*;
+import DnD1.Races.*;
 
 public class Player extends Entity
 {
@@ -41,7 +43,7 @@ public class Player extends Entity
     {
         String nom = this.getName();
         String level = "[" + this.getLevel() + "]";
-        String attributes = "(" + this.getClasse().name() + "/" + this.getRace().name() + "/" + this.getHistoric().name() + ")";
+        String attributes = "(" + this.getClasse().getClass().getSimpleName() + "/" + this.getRace().getClass().getSimpleName() + "/" + this.getHistoric().name() + ")";
         String life = "Life : " + this.getLife() + "/" + this.getMaxLife();
         String gold = "Gold : " + this.getGold();
         return String.format("%-5s%-16s%-25s\n\t%-15s\n\t%-15s", level, nom, attributes, life, gold);
@@ -50,7 +52,7 @@ public class Player extends Entity
     //main
     public static void main(String[] args)
     {
-        Player player = new Player("Luca", 100, 48, 12, Classe.Wizzard, Race.Elf, Historic.Sage, 1500);
+        Player player = new Player("Luca", 100, 48, 12, new Wizzard(), new Elf(), Historic.Sage, 1500);
         System.out.println(player);
     }
 }
