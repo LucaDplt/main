@@ -5,6 +5,7 @@ import java.io.Console;
 import DnD1.Entities.Entity;
 import DnD1.Classes.*;
 import DnD1.Races.*;
+import DnD1.Historics.*;
 
 public class Player extends Entity
 {
@@ -195,7 +196,7 @@ public class Player extends Entity
     {
         String nom = this.getName();  
         String level = "[" + this.getLevel() + "] " + this.getExperience() + "/" + this.getExperienceCap();
-        String attributes = "(" + this.getClasse().getClass().getSimpleName() + "/" + this.getRace().getClass().getSimpleName() + "/" + this.getHistoric().name() + ") [" + this.getSize() + "]";
+        String attributes = "(" + this.getClasse().getClass().getSimpleName() + "/" + this.getRace().getClass().getSimpleName() + "/" + this.getHistoric().getClass().getSimpleName() + ") [" + this.getSize() + "]";
         String life = "Life : " + this.getLife() + "/" + this.getMaxLife();
         String gold = "Gold : " + this.getGold();
         return String.format("%-16s%-25s\n%-5s\n%-15s\n%-15s", nom, attributes, level, life, gold);
@@ -204,7 +205,7 @@ public class Player extends Entity
     //main
     public static void main(String[] args)
     {
-        Player player = new Player("Luca", 100, 48, new Wizzard(), new Elf(), Historic.Sage, 1500);
+        Player player = new Player("Luca", 100, 48, new Wizzard(), new Elf(), new Sage(), 1500);
         System.out.println(player);
         player.addExperience(1500);
         System.out.println(player);

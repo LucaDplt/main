@@ -1,8 +1,8 @@
 package DnD1.Entities;
 
-import DnD1.Entities.Players.*;
 import DnD1.Classes.*;
 import DnD1.Races.*;
+import DnD1.Historics.*;
 
 public abstract class Entity
 {
